@@ -2,7 +2,7 @@ FROM python:3.8.5
 
 WORKDIR /usr/src/app
 
-RUN pip install django djangorestframework
+RUN pip install django djangorestframework django-cors-headers
 
 COPY . .
 
