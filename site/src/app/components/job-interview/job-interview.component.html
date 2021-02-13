@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="content">
+		<h1>The Job Interview</h1>
+		<mat-card>
+			<!-- <mat-card-title>Weapon Select</mat-card-title> -->
+			<mat-card-content>
+				<p>
+					{{playerName}} has a big adventure ahead. Select the weapon that {{playerName}} will bring.
+				</p>
+			</mat-card-content>
+			<div class="image-container">
+				<img mat-card-image src={{imgSrc}} alt="icon">
+			</div>
+			<mat-card-actions>
+				<button (click)="selectWeapon(weaponType.Confidence)" mat-raised-button>SELF CONFIDENCE</button>
+				<button (click)="selectWeapon(weaponType.Experience)" mat-raised-button>INDUSTRY EXPERIENCE</button>
+				<button (click)="selectWeapon(weaponType.Rich)" mat-raised-button>A RICH UNCLE</button>
+			</mat-card-actions>
+		</mat-card>
+	</div>
+</div>
