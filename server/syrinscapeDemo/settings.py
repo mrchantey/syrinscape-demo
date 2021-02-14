@@ -26,6 +26,7 @@ SECRET_KEY = '@!87o3=fvt46s(3o+()z8&5prmx80rbw47w7hkqy4qls-ygzr_'
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -33,14 +34,15 @@ ALLOWED_HOSTS = ['*']
 CORS_ALLOW_ALL_ORIGINS = True
 
 INSTALLED_APPS = [
-	'rest_framework',#rest
-	'corsheaders',#cors
+	'rest_framework',					#rest
+	'corsheaders',						#cors
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'channels',							#channels
 ]
 
 MIDDLEWARE = [
@@ -73,6 +75,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'syrinscapeDemo.wsgi.application'
+
+ASGI_APPLICATION = "syrinscapeDemo.asgi.application"
+
+
 
 
 # Database

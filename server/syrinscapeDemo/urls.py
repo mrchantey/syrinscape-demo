@@ -11,7 +11,6 @@ from django.conf.urls import url, include
 
 weapon_type = 'none'
 
-
 @api_view(['GET', 'POST'])
 def weapon_req(request):
 	global weapon_type
