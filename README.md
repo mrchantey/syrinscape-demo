@@ -31,5 +31,4 @@ Tech demo for job interview at Syrinscape
 	- http://syrinscape-demo.s3-website-ap-southeast-2.amazonaws.com/
 
 ## Game Instructions
-- Download build
-	- 
+- clone repo and run game/Builds/build.exe
