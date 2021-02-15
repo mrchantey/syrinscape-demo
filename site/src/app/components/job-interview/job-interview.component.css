@@ -3,27 +3,31 @@
 	/* background-color: #1E1E1E; */
 	/* color: #D4D4D4; */
 	display: grid;
-	grid-template-columns: 2fr 8fr 2fr;
-	grid-template-rows: 3fr 7fr;
+	grid-template-columns: 2fr auto 2fr;
+	grid-template-rows: 2fr 2fr 2fr 4fr;
+	grid-row-gap: 1em;
 	/* padding-top: 20%; */
+}
+
+.content {
+	/* max-width: 800px; */
+	/* justify-self: center; */
+	padding: 1em;
+	/* max-height: 30%; */
+	grid-column: 2/ 3;
+	/* grid-row: 2 / 3; */
 }
 
 .image-container{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	max-height: 192px;
-}
+	/* max-height: 192px; */
+}	
 
 img{
 	max-width: 192px;
 	max-height: 192px;
 	grid-column: 2/3;
-	/* justify-self: center; */
-}
-
-.content {
-
-	grid-column: 2/ 3;
-	grid-row: 2 /3;
-}
+	justify-self: center;
+}	
 

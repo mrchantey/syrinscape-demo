@@ -16,47 +16,24 @@ https://docs.djangoproject.com/en/3.1/howto/deployment/asgi/
 # application = get_asgi_application()
 
 
+from channels.routing import ProtocolTypeRouter, URLRouter
+from channels.auth import AuthMiddlewareStack
+from django.conf.urls import url, include
+from channels.generic.websocket import WebsocketConsumer
 import os
 import django
 from channels.http import AsgiHandler
 from channels.routing import ProtocolTypeRouter
+from syrinscapeDemo.urls import websocket_urlpatterns
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'syrinscapeDemo.settings')
 django.setup()
 
-# application = ProtocolTypeRouter({
-#   "http": AsgiHandler(),
-#   # Just HTTP for now. (We can add other protocols later.)
-# })
-
-
-# https://www.sitepoint.com/premium/books/django-channels-for-real-time-updates/read/1
-
-from channels.generic.websocket import WebsocketConsumer
-from django.conf.urls import url, include
-class SocketConsumer(WebsocketConsumer):
-    def connect(self):
-        self.accept()
-    def disconnect(self, close_code):
-        pass
-    def receive(self, text_data):
-        "Handle incoming WebSocket data"
-        if text_data == "echo":
-            self.send(text_data="powpowpow")
-
-
-websocket_urlpatterns = [
-    url(r'^socket$',SocketConsumer.as_asgi()),
-]
-
-
-from channels.auth import AuthMiddlewareStack
-from channels.routing import ProtocolTypeRouter, URLRouter
-# import urls
 application = ProtocolTypeRouter({
+    #   "http": AsgiHandler(),
     'websocket': AuthMiddlewareStack(
         URLRouter(
-           websocket_urlpatterns
+            websocket_urlpatterns
         )
     ),
 })

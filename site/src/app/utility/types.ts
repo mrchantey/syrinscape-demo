@@ -4,3 +4,11 @@ export enum WeaponType {
 	Experience,
 	Rich
 }
+
+
+export enum EnemyType {
+	None,
+	Emotional,
+	PrimaDonna,
+	Opinionated
+}
